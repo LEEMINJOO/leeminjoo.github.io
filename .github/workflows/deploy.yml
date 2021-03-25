@@ -4,11 +4,17 @@ on:
 name: Deploy
 
 jobs:
-  deploy:
+  container-job:
     name: Deploy
     runs-on: ubuntu-latest
-    env:
-      PORT: 4000
+    container: jekyll/jekyll:latest
+
+    services:
+      docker-compose:
+        image: jekyll/jekyll:latest
+        ports:
+          - 4000:4000
+
     steps:
     - uses: actions/checkout@v2
     - name: Docker
