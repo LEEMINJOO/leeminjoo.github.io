@@ -10,4 +10,6 @@ jobs:
     env:
       PORT: 4000
     steps:
-    - run: docker-compose -f /home/runner/work/leeminjoo.github.io/docker-compose.yml up 
+    - uses: actions/checkout@v2
+    - name: Docker
+      run: docker-compose -f docker-compose.yml up 
