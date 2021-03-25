@@ -10,4 +10,4 @@ jobs:
     env:
       PORT: 4000
     steps:
-    - run: docker-compose -f docker-compose.yml up 
+    - run: docker-compose -f $(pwd)/docker-compose.yml up 
