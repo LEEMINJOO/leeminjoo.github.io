@@ -1,6 +1,6 @@
 jekyll:
     image: jekyll/jekyll:latest
-    command: bash -c "gem install bundler && sudo chown -R $(whoami):$(whoami) && jekyll serve --force_polling"
+    command: bash -c "gem install bundler && jekyll serve --force_polling"
     ports:
         - 4000:4000
     volumes:
