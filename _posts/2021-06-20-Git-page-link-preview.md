@@ -6,17 +6,17 @@ categories: "Jekyll-setting"
 
 Jekyll 기반 Gihub Page에 아래와 같이 링크 미리보기 설정 방법을 정리했습니다.
 
-{% \raw %}
+{% raw %}
 {% linkpreview "https://leeminjoo.github.io" %}
-{% \endraw %}
+{% endraw %}
 
 ## jekyll-linkpreview
 
 아래 페이지를 참고하였습니다.
 
-{% \raw %}
+{% raw %}
 {% linkpreview "https://github.com/ysk24ok/jekyll-linkpreview" %}
-{% \endraw %}
+{% endraw %}
 
 ### 1. `_config.yml`
 
