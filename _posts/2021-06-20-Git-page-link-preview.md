@@ -6,6 +6,13 @@ categories: "Jekyll-setting"
 
 Jekyll 기반 Gihub Page에 아래와 같이 링크 미리보기 설정 방법을 정리했습니다.
 
+
+!!
+- Local에서는 작동하지만, Github-page 정책상 지원하지 않는 plugin입니다.
+- 직접 빌드 후 배포하는 과정이 필요합니다.
+- [Ref1](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll#plugins)
+- [Ref2](https://stackoverflow.com/a/28252200) 
+
 {% raw %}
 {% linkpreview "https://leeminjoo.github.io" %}
 {% endraw %}
