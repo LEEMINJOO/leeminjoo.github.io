@@ -24,7 +24,7 @@ Trader는 업비트 API를 이용해 불러온 가상화폐(이하 코인) 가�
         def __init__(
             self,
             upbit,
-            ticker,
+            ticker: str,
         ):
             self.upbit = upbit
             self.ticker = ticker
@@ -99,28 +99,61 @@ class BasicTrader:
             volume=self.ticker_balance,
         )
         print(f"Sell {self.ticker}, Ticker: {self.ticker_balance}")
-
 ```
 
 만약, 가격과 거개량을 지정하고 싶은 경우 함수를 변경하면 됩니다.
 
 ```python
-    def buy(self, ticker_price, ticker_volume):
-        krw_price = ticker_price * ticker_volume
+    def buy(
+        self,
+        price=None, 
+        volume=None,
+    ):
+        krw_price = 10000
+
+        # `price`가 입력되지 않은 경우, 
+        # 현재가로 할당합니다.
+        if price is None:
+            price = pyupbit.get_current_price(self.ticker)
+
+        # `volume`이 입력되지 않은 경우, 
+        # 10,000원에 해당하는 만큼 할당합니다.
+        if volume is None:
+            volume = self.krw_balance / price
+            volume = round(volume, 2)
+
+        krw_price = price * volume
         if self.krw_balance > krw_price:
             self.upbit.buy_limit_order(
                 ticker=self.ticker,
-                price=ticker_price,
-                volume=ticker_volume,
+                price=price,
+                volume=volume,
             )
+            print(f"Buy {self.ticker}, KRW: {krw_price}")
+```
 
-    def sell(self, ticker_price, ticker_volume):
+```python
+    def sell(
+        self, 
+        price=None, 
+        volume=None,
+    ):
+        # `price`가 입력되지 않은 경우, 
+        # 평균 구매 가격의 1%를 더합니다.
+        if price is None:
+            price = self.avg_ticker_price * (1.01)
+
+        # `volume`이 입력되지 않은 경우, 
+        # 전체 보유 수량으로 할당합니다.
+        if volume is None:
+            volume = self.ticker_balance
+
         self.upbit.sell_limit_order(
             ticker=self.ticker,
-            price=ticker_price,
-            volume=ticker_volume,
+            price=price,
+            volume=volume,
         )
-
+        print(f"Sell {self.ticker}, Ticker: {self.ticker_balance}")
 ```
 
 ### Trader 실행하기
@@ -207,16 +240,7 @@ class BasicTrader:
 
 ### 매도가격 예약하기
 
-원하는 금액으로 매도하기 위해 `sell` 함수를 수정하겠습니다.
-
-```python
-    def sell(self, ticker_price, ticker_volume):
-        self.upbit.sell_limit_order(
-            ticker=self.ticker,
-            price=ticker_price,
-            volume=ticker_volume,
-        )
-```
+원하는 금액으로 매도하기 위해 `sell` 함수를 수정했습니다.
 
 이제 원하는 매도 가격으로 예약할 수 있습니다.
 
@@ -234,7 +258,7 @@ class BasicTrader:
 >>> trader.sell(price, volume)
 ```
 
-예약이 된 것을 확인 할 수 있습니다. ~~이후 거래 되면 추가 업로드 하겠습니다 ㅎㅎ~~
+예약이 된 것을 확인 할 수 있습니다. 
 <figure>
     <center>
         <img src="/assets/imgs/upbit/trader-1-p.jpg" 
