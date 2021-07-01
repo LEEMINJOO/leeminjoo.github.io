@@ -1,7 +1,7 @@
 ---
 layout: post
 toc: true
-title: "자동매매 백테스트"
+title: "백테스트로 자동매매 성능 확인하기"
 categories: 파이썬으로-업비트-자동매매
 ---
 

@@ -277,6 +277,6 @@ class BasicTrader:
 </figure>
 
 
-다음 포스트에서는 잠든 사이에도 자동으로 매수/매도 하는 Trader를 만들어 보기 전에 Trader의 수익률 성능을 확인하기 위한 백테스트를 소개하겠습니다.
+[다음 포스트]({% post_url 2021-06-27-Backtesting %})에서는 잠든 사이에도 자동으로 매수/매도 하는 Trader를 만들어 보기 전에 Trader의 수익률 성능을 확인하기 위한 백테스트를 소개하겠습니다.
 
 전테 코드는 [Github](https://github.com/LEEMINJOO/only-trading-is-life-way/blob/2021.03.13.ver/src/trader/basic_trader.py)에서 확인 가능합니다.
