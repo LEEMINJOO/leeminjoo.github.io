@@ -86,9 +86,9 @@ Multiplex Graph는 Graph가 여러 Layer로 분해될 수 있는 경우 입니�
 
 ### 1.1.2 Feature Information
 
-그래프와 관련된 속성 Attribute / Feature 정보를 가질 수 있습니다. 
-약 노드라면 주요 성분 등이 속성 정보가 될 수 있습니다.
-Heterogeneous Grpah인 경우 종류가 다른 노드라면 다른 종류의 속성값을 갖을 거라고 예상할 수 있습니다.
+Graph와 관련된 속성 Attribute / Feature 정보를 가질 수 있습니다. 
+약 Node라면 주요 성분 등이 속성 정보가 될 수 있습니다.
+Heterogeneous Grpah인 경우 종류가 다른 Node라면 다른 종류의 속성값을 갖을 거라고 예상할 수 있습니다.
 
 ## 1.2 Machine Learning on Graphs
 
@@ -110,19 +110,19 @@ GraphML의 Task는 크게 4가지 단계로 나눌 수 있습니다.
 
 ### 1.2.1 Node Classification
 
-Node Level의 한 종류인 Node Classification의 목표는 노드의 Label을 예측하는 것입니다.
+Node Level의 한 종류인 Node Classification의 목표는 Node의 Label을 예측하는 것입니다.
 Label은 어떤 종류인지, 카테고리 인지, 속성인지 등이 해당합니다.
 예를 들어, 백만 유저를 가진 Social Network가 있을 때 실제 유저가 아닌 Bot을 분류해 내는 문제가 이에 속합니다.
 일부 유저 데이터을 Labeling하고 이를 학습해 전체 유저에 대해 예측할 수 있습니다.
 
 딥마인드에서 개발된 Protein Foldling 문제해결을 위한 AlphaFold가 Node Level 접근의 다른 예시입니다.
-단백질 속에 있는 Amino acid들이 노드, 노드 사이의 가까움 정도를 엣지로 표현합니다.
-그리고 각 노드의 새로운 Position를 예측하고 이를 이용해 3D형태의 단백질 구조를 예측합니다.
+단백질 속에 있는 Amino acid들이 Node, Node 사이의 가까움 정도를 Edge로 표현합니다.
+그리고 각 Node의 새로운 Position를 예측하고 이를 이용해 3D형태의 단백질 구조를 예측합니다.
 
 표준 Supervised Learning과의 차이점이 있습니다.
-가장 중요한 차이점은 그래프의 노드들이 서로 독립이 아니라는 점입니다.
-iid Set을 가정하고 모델링 하는 대신 노드들 사이의 상호연결을 모델링합니다.
-또 다른 차이점은 모델을 학습할 때 Label되지 않은 Test 노드들을 사용해 Semi-supervised로 여길 수 있습니다.
+가장 중요한 차이점은 Graph의 Node들이 서로 독립이 아니라는 점입니다.
+iid Set을 가정하고 모델링 하는 대신 Node들 사이의 상호연결을 모델링합니다.
+또 다른 차이점은 모델을 학습할 때 Label되지 않은 Test Node들을 사용해 Semi-supervised로 여길 수 있습니다.
 하지만 기존 Semi-supervised도 각 Sample에 대해 iid 가정을 하기 때문에 차이가 있습니다.
 
 ### 1.2.2 Relation Prediction
@@ -137,7 +137,7 @@ Relation Prediction은 누락된 Relationship 정보를 예측하는 것입니�
 ### 1.2.3 Clustering and Community Detection
 
 Clustering and Community Detection은 Subgraph Level의 Unsupervised Clustering 방법입니다.
-한 개의 입력 그래프 $G = (N, E)$가 주어졌을 때, 내부에서 여러 Subgraph로 클러스터링합니다.
+한 개의 입력 Graph $G = (N, E)$가 주어졌을 때, 내부에서 여러 Subgraph로 클러스터링합니다.
 유전 작용 네트워크에서 기능별 모듈로 분류하거나, 금융 네트워크에서 사기 단체를 찾아내는 것을 예로 들 수 있습니다.
 
 또 다른 Subgraph Level예시로, Traffic Predition이 있습니다.
@@ -146,7 +146,7 @@ Clustering and Community Detection은 Subgraph Level의 Unsupervised Clustering 
 
 ### 1.2.4 Graph Classification, Regression, and Clustering
 
-하나의 그래프 안에서 각각의 Component에 대해 예측하는 대신 각각의 그래프에 대해서 독립적으로 예측하는 Graph Level이 있습니다.
-Graph Classification과 Regression은 하나의 그래프에 대해 목표값을 예측합니다.
-Graph Clustering은 그래프 쌍 사이의 유사도를 계산해 Grouping합니다.
-Graph Level에서는 각 그래프를 독립적으로 보기 때문에 표준 ML과 더 유사하다고 할 수 있습니다.
+하나의 Graph 안에서 각각의 Component에 대해 예측하는 대신 각각의 Graph에 대해서 독립적으로 예측하는 Graph Level이 있습니다.
+Graph Classification과 Regression은 하나의 Graph에 대해 목표값을 예측합니다.
+Graph Clustering은 Graph 쌍 사이의 유사도를 계산해 Grouping합니다.
+Graph Level에서는 각 Graph를 독립적으로 보기 때문에 표준 ML과 더 유사하다고 할 수 있습니다.
