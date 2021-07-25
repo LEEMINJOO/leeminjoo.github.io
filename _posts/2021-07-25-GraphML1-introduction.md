@@ -2,7 +2,8 @@
 layout: post
 toc: true
 title: "[GraphML] 1. GraphML 소개"
-categories: [graph-ml]
+categories: graph-ml
+tags: [Intro]
 ---
 
 [Graph Representation Learning Book](https://www.cs.mcgill.ca/~wlh/grl_book/)의 Chapter1을 번역, 요약했습니다.
