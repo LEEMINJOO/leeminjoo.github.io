@@ -44,3 +44,10 @@ social:
     - https://github.com/LEEMINJOO
 google_site_verification: u4WXQl0Eu66rsQo2kRdCNx
 lang: en
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
