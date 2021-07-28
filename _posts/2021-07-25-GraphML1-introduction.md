@@ -66,13 +66,13 @@ Weighted Edge인 경우 행렬값은 0과 1 대신 실수값을 갖습니다.
 Undirected, Directed, Weighted Edge로 구분하는 것과 별개로 Edge는 여러 종류를 가질 수 있습니다.
 예를 들어, 두가지 약 사이의 부작용 관계를 표현할 때 구토, 설사, 고열 등과 같이 여러 종류의 관게를 표현할 수 있습니다.
 이 때 Multi-relational Graphs 라고 합니다.
-Multi-relational Graphs의 일부로 **"Heterogeneous Grpah"**와 **"Multiplex Graph"**가 있습니다.
+Multi-relational Graphs의 일부로 **"Heterogeneous Graph"**와 **"Multiplex Graph"**가 있습니다.
 
-Heterogeneous Grpah는 Node가 여러 종류로 나뉘는 경우 입니다.
+Heterogeneous Graph는 Node가 여러 종류로 나뉘는 경우 입니다.
 예를 들어, 단백질에 속하는 Node들, 약에 속하는 Node들, 질병에 속하는 Node들로 Graph가 표현되는 경우 입니다.
 이때 약 Node와 질병 Node는 "치료" 관계 Edge를 가지고, 약 Node들 사이에는 부작용 관계를 가질 수 있습니다.
 
-Heterogeneous Grpah의 일부로 Multipartite Graph가 있습니다.
+Heterogeneous Graph의 일부로 Multipartite Graph가 있습니다.
 Multipartite Graph는 Bipartite Graph의 확장입니다.
 Bipartite Graph는 이분 Graph로 Node들이 두 가지 종류로 나뉘고, 같은 종류의 Node들과는 연결되지 않는 Graph입니다.
 예를 들어, "유저가 본 영화" 관계 Graph에서 유저와 영화 사이에만 Edge가 있고 영화와 영화를 연결하거나 유저와 유저를 연결하는 Edge는 없습니다.
@@ -88,7 +88,7 @@ Multiplex Graph는 Graph가 여러 Layer로 분해될 수 있는 경우 입니�
 
 Graph와 관련된 속성 Attribute / Feature 정보를 가질 수 있습니다. 
 약 Node라면 주요 성분 등이 속성 정보가 될 수 있습니다.
-Heterogeneous Grpah인 경우 종류가 다른 Node라면 다른 종류의 속성값을 갖을 거라고 예상할 수 있습니다.
+Heterogeneous Graph인 경우 종류가 다른 Node라면 다른 종류의 속성값을 갖을 거라고 예상할 수 있습니다.
 
 ## 1.2 Machine Learning on Graphs
 
