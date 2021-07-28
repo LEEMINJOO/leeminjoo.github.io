@@ -1,7 +1,7 @@
 ---
 layout: post
 toc: true
-title: "[GraphML] 1. GraphML 소개"
+title: "[CS224W GraphML] 1. GraphML 소개"
 categories: graph-ml
 tags: [Intro]
 ---
