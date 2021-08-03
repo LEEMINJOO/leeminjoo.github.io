@@ -4,7 +4,7 @@ toc: true
 title: "M1 Mac python 환경 구성하기 - numpy"
 categories: Mac-setting
 sitemap :
-changefreq : daily
+changefreq : weekly
 priority : 1.0
 ---
 

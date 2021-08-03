@@ -4,7 +4,7 @@ toc: true
 title: "M1 Mac 세팅하기 - Homebrew, pyenv, numpy"
 categories: Mac-setting
 sitemap :
-changefreq : daily
+changefreq : weekly
 priority : 1.0
 ---
 

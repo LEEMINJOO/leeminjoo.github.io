@@ -5,7 +5,7 @@ title: "[CS224W GraphML] 1. GraphML 소개"
 categories: graph-ml
 tags: [Intro]
 sitemap :
-changefreq : daily
+changefreq : weekly
 priority : 1.0
 ---
 

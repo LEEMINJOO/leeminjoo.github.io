@@ -4,7 +4,7 @@ toc: true
 title: "[CS224W GraphML] 2-1. GraphML 배경지식과 고전방법 - Graph Statistics: networkx, Centrality, Graphlet"
 categories: graph-ml
 sitemap :
-changefreq : daily
+changefreq : weekly
 priority : 1.0
 ---
 

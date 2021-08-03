@@ -4,7 +4,7 @@ toc: true
 title: "파이썬으로 업비트 거래하기"
 categories: 파이썬으로-업비트-자동매매
 sitemap :
-changefreq : daily
+changefreq : weekly
 priority : 1.0
 ---
 업비트 API를 wrapping한 파이썬 라이브러리 `pyupbit`를 이용해 업비트 데이터를 불러오고, 주문하는 방법에 대해 알아보겠습니다. 포스트는 [pyupbit github](https://github.com/sharebook-kr/pyupbit) 페이지를 참고하여 작성했습니다. 
@@ -79,7 +79,7 @@ print 결과를 통해 설치가 잘 완료됐는지 확인합니다.
 
 <figure>
     <center>
-        <img src="/assets/imgs/upbit/daily_chart.png" 
+        <img src="/assets/imgs/upbit/weekly_chart.png" 
          width="90%" height="90%" alt=""/> 
         <figcaption>거래소 캔들 차트</figcaption>
     </center>

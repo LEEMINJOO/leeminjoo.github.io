@@ -4,7 +4,7 @@ toc: true
 title: "Jekyll Open Graph 설정하기"
 categories: "Jekyll-setting"
 sitemap :
-changefreq : daily
+changefreq : weekly
 priority : 1.0
 ---
 

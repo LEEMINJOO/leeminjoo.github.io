@@ -3,7 +3,7 @@ layout: post
 title: "Jekyll 링크 미리보기 추가하기"
 categories: "Jekyll-setting"
 sitemap :
-changefreq : daily
+changefreq : weekly
 priority : 1.0
 ---
 

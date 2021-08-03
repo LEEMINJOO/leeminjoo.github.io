@@ -4,7 +4,7 @@ toc: true
 title: "자동매매로 가상화폐 1퍼센트 수익내기"
 categories: 파이썬으로-업비트-자동매매
 sitemap :
-changefreq : daily
+changefreq : weekly
 priority : 1.0
 ---
 
