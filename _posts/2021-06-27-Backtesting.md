@@ -3,6 +3,9 @@ layout: post
 toc: true
 title: "백테스트로 자동매매 성능 확인하기"
 categories: 파이썬으로-업비트-자동매매
+sitemap :
+changefreq : daily
+priority : 1.0
 ---
 
 오늘은 Trader의 수익률 성능을 확인하기 위한 백테스트에 대해 소개해 드리겠습니다. 

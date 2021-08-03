@@ -3,6 +3,9 @@ layout: post
 toc: true
 title: "[CS224W GraphML] 2-1. GraphML 배경지식과 고전방법 - Graph Statistics: networkx, Centrality, Graphlet"
 categories: graph-ml
+sitemap :
+changefreq : daily
+priority : 1.0
 ---
 
 [Graph Representation Learning Book](https://www.cs.mcgill.ca/~wlh/grl_book/)의 Chapter2을 번역, 요약, 정리했습니다.

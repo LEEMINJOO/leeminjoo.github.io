@@ -4,6 +4,9 @@ toc: true
 title: "[CS224W GraphML] 1. GraphML 소개"
 categories: graph-ml
 tags: [Intro]
+sitemap :
+changefreq : daily
+priority : 1.0
 ---
 
 [Graph Representation Learning Book](https://www.cs.mcgill.ca/~wlh/grl_book/)의 Chapter1을 번역, 요약했습니다.

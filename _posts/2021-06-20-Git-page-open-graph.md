@@ -3,6 +3,9 @@ layout: post
 toc: true
 title: "Jekyll Open Graph 설정하기"
 categories: "Jekyll-setting"
+sitemap :
+changefreq : daily
+priority : 1.0
 ---
 
 [Jekyll 링크 미리보기 추가하기]({% post_url 2021-06-20-Git-page-link-preview %})에서 포스트 미리보기를 설정했습니다.

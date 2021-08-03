@@ -2,6 +2,9 @@
 layout: post
 title: "Jekyll 링크 미리보기 추가하기"
 categories: "Jekyll-setting"
+sitemap :
+changefreq : daily
+priority : 1.0
 ---
 
 Jekyll 기반 Gihub Page에 아래와 같이 링크 미리보기 설정 방법을 정리했습니다.
