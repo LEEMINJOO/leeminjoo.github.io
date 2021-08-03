@@ -29,7 +29,7 @@ Logistic Regression과 같은 Node 분류 모델에 사용될 수있는 통계�
 
 #### 2.1.1.1 Node Degree
 
-**Node Degree**는 하나의 Node를 지나는 Edge의 갯수로 자유도라 불리는 가장 명확 값입니다.
+**Node Degree**는 하나의 Node를 지나는 Edge의 개수로 자유도라 불리는 가장 명확 값입니다.
 Node-level ML task에서 가장 의미있는 속성값 중 하나입니다.
 
 $u \in V$의 자유도는 $d_u$로 표현합니다. 
@@ -156,7 +156,7 @@ nx.closeness_centrality(G)
 </figure>
 
 아래 수식에서 $N(u) = \{v \in V: (u,v)\in E\}$는 Node $u$의 이웃 Node Set을 나타냅니다.
-아웃 Node들의 전체 연경 경우의 수 대시 실제 연결된 갯수를 의미합니다.
+아웃 Node들의 전체 연경 경우의 수 대시 실제 연결된 개수를 의미합니다.
 
 $$
 c_v = \frac{|(v_1,v_2) \in E: v_1, v_2 \in N(u)|}{d_v \choose 2}
@@ -177,7 +177,7 @@ nx.clustering(G)
 
 #### 2.1.1.4 Closed triangles, ego graphs, and motifs.
 
-Clustering Coefficient 를 보는 또 다른 방법은 각 Node의 Local Neighborhood안에 있는 닫힌 삼각관계의 갯수를 보는 것 입니다. 
+Clustering Coefficient 를 보는 또 다른 방법은 각 Node의 Local Neighborhood안에 있는 닫힌 삼각관계의 개수를 보는 것 입니다. 
 Node의 Local Neighborhood는 Ego Graph라고 하기도 합니다. 
 1-Hop Network로 한 층의 Edge로만 연결된 부분 Graph입니다.
 닫힌 삼각관계란 Social Network에서 나의 친구가 있고, 친구의 친구가 나와도 친구인 상황입니다.
@@ -199,9 +199,9 @@ Node가 각 Graphlet에 해당하는 경우의 수를 나열한 벡터인 Graphl
 
 이를 좀더 확장하면 Graph Level에서 더 표현하는 방법으로 사용 될 수 있습니다.
 
-1. Degree: 연결된 Edge의 갯수
-2. Clustering Coefficient: 연결된 삼각관계의 갯수
-3. GDV: 각 Graphlet의 갯수 벡터
+1. Degree: 연결된 Edge의 개수
+2. Clustering Coefficient: 연결된 삼각관계의 개수
+3. GDV: 각 Graphlet의 개수 벡터
 
 ### 2.1.2 Graph-level Features and Graph Kernels
 
@@ -211,8 +211,8 @@ Graph Level에서는 Feature Vector 대신 Graph Kernel Method를 주로 사용�
 #### 2.1.2.1 Bag of Nodes
 
 가장 간단한 벙법은 Node Level의 통게값을 Aggregation 통합하는 것입니다.
-단순히 전체 노도의 갯수로 표현할 수 있고,
-(자유도가 1인 Node의 갯수, 2인 Node의 갯수, 3인 Node의 갯수,,,)처럼 벡터로 표현할 수 있습니다.
+단순히 전체 노도의 개수로 표현할 수 있고,
+(자유도가 1인 Node의 개수, 2인 Node의 개수, 3인 Node의 개수,,,)처럼 벡터로 표현할 수 있습니다.
 
 이 방법은 Node Level의 Local 정보만 반영해서 만들어지기 때문엔 Grobal 속성 정보는 놓치기 쉽습니다.
 
@@ -257,8 +257,8 @@ Weisfeiler-Lehman Kernel을 이용해 두개의 Graph에 대해 각각 표현하
 
 #### 2.1.2.3 Graphtlets and Path-based Methods
 
-Node Level을 넘어 Graph Level에서도 `Graphlet`이라 불리는 Subgraph들의 갯수를 이용해 Feature를 만들 수 있습니다.
-하나의 Full Graph 안에 각각의 Graphlet이 속한 갯수를 이용합니다.
+Node Level을 넘어 Graph Level에서도 `Graphlet`이라 불리는 Subgraph들의 개수를 이용해 Feature를 만들 수 있습니다.
+하나의 Full Graph 안에 각각의 Graphlet이 속한 개수를 이용합니다.
 히지만 이 방법은 계산하기 어렵다는 문제가 있어 대략적으로 근사시키는 방법이 사용되기도 합니다.
 
 모든 Graphlet을 세는 대신 Path-based Method를 사용할 수 있습니다.
