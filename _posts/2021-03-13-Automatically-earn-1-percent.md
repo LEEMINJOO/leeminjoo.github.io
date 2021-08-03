@@ -3,6 +3,9 @@ layout: post
 toc: true
 title: "자동매매로 가상화폐 1퍼센트 수익내기"
 categories: 파이썬으로-업비트-자동매매
+sitemap :
+changefreq : daily
+priority : 1.0
 ---
 
 이번 포스트에서는 업비트 API를 wrapping한 파이썬 라이브러리 `pyupbit`를 이용해 자동으로 현재가로 매수하고, 1퍼센트 수익이 생기는 시점에 매도하는 프로그램을 만들어보겠습니다.
