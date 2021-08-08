@@ -35,8 +35,8 @@ Logistic Regression과 같은 Node 분류 모델에 사용될 수있는 통계�
 **Node Degree**는 하나의 Node를 지나는 Edge의 개수로 자유도라 불리는 가장 명확 값입니다.
 Node-level ML task에서 가장 의미있는 속성값 중 하나입니다.
 
-$u \in V$의 자유도는 $d_u$로 표현합니다. 
-[이전 장]({% post_url 2021-07-25-GraphML1-introduction %})에서 설명한 인접 행렬에서 $u$에 대한 하나의 열 또는 행의 합산과 같습니다. (Undirected Graph 기준)
+$$u \in V$$의 자유도는 $$d_u$$로 표현합니다. 
+[이전 장]({% post_url 2021-07-25-GraphML1-introduction %})에서 설명한 인접 행렬에서 $$u$$에 대한 하나의 열 또는 행의 합산과 같습니다. (Undirected Graph 기준)
 
 $$
 d_u = \sum_{v \in V}A[u, v]
@@ -82,17 +82,17 @@ Node Centrality 중심성으로 알려진 속성값을 고려해야합니다.
 
 가장 많이 알려진 **Eigenvector Centrality**가 있습니다.
 Node 주변에 있는 이웃 Node들의 중요도를 이용해 표현합니다.
-Node $v$의 Eigenvector Centrality는 $e_v$로 표현하고, 이웃 Node들의 평균 Centrality입니다.
+Node $$v$$의 Eigenvector Centrality는 $$e_v$$로 표현하고, 이웃 Node들의 평균 Centrality입니다.
 이웃 Node의 Centrality가 클 경우, 해당 Node의 Centrality도 커지게 됩니다.
 
 $$
 e_u = \frac{1}{\lambda} \sum_{v \in V} A [u, e]e_v \forall u \in V.
 $$
 
-$\lambda$ 는 하나의 상수값입니다.
-모든 Node의 Centrality 벡터 $e$는 아래 처럼 행령식으로 표현할 수 있습니다.
-행렬식으로 표현할 경우 Centrality는 $A$의 고유벡터 Eigenvector임을 알 수 있습니다.
-가장 큰 고유값 Eigenvalue $\lambda_{\text{max}}$ 에 해당하는 Eigenvector $e_{\text{max}}$를 이용해 Centrality 를 표현합니다.
+$$\lambda$$ 는 하나의 상수값입니다.
+모든 Node의 Centrality 벡터 $$e$$는 아래 처럼 행령식으로 표현할 수 있습니다.
+행렬식으로 표현할 경우 Centrality는 $$A$$의 고유벡터 Eigenvector임을 알 수 있습니다.
+가장 큰 고유값 Eigenvalue $$\lambda_{\text{max}}$$ 에 해당하는 Eigenvector $$e_{\text{max}}$$를 이용해 Centrality 를 표현합니다.
 
 $$
 \lambda e = A e.
@@ -148,7 +148,7 @@ nx.closeness_centrality(G)
 #### 2.1.1.3 Clustering Coefficient 
 
 앞의 두 지표는 Node 주변의 Local Structure를 나타내기에는 부족합니다.
-예를 들어, 아래 [Graph2]에서 Node $v$는 모두 4개의 다른 Node와 연결되어 있습니다.
+예를 들어, 아래 [Graph2]에서 Node $$v$$는 모두 4개의 다른 Node와 연결되어 있습니다.
 하지만 연결된 Node 사이에서 연결된 정도가 다릅니다.
 이웃 Node가 서로서로 모두 이웃 Node 일때 Clustering Coefficient는 1이 됩니다.
 
@@ -158,7 +158,7 @@ nx.closeness_centrality(G)
     <figcaption>[Graph2] 출처: CS224W ch2.</figcaption>
 </figure>
 
-아래 수식에서 $N(u) = \{v \in V: (u,v)\in E\}$는 Node $u$의 이웃 Node Set을 나타냅니다.
+아래 수식에서 $$N(u) = \{v \in V: (u,v)\in E\}$$는 Node $$u$$의 이웃 Node Set을 나타냅니다.
 아웃 Node들의 전체 연경 경우의 수 대시 실제 연결된 개수를 의미합니다.
 
 $$
@@ -224,14 +224,14 @@ Graph Level에서는 Feature Vector 대신 Graph Kernel Method를 주로 사용�
 Bag of Nodes을 이웃 정보를 반복적으로 통합하는 방식으로 발전시켜 사용할 수 있습니다.
 Ego Graph의 좁은 영역보다 많은 정보를 갖는 Node Level Feature를 발전시켜 Graph Level Feature로 사용합니다.
 
-1. 각 Node의 초기 레이블 $l^{(0)}(v)$을 설정합니다. 단순히 $l^{(0)}(v) = d_v \forall v \in V$ 와 같이 자유도로 할당할 수 있습니다.
+1. 각 Node의 초기 레이블 $$l^{(0)}(v)$$을 설정합니다. 단순히 $$l^{(0)}(v) = d_v \forall v \in V$$ 와 같이 자유도로 할당할 수 있습니다.
 2. 새로운 레이블은 이웃 Node의 현재 레이블을 이용해 표현합니다. 이때 현레 레이블 집합으로 Hashing한 새로운 값을 사용합니다. 
     $$
     l^{(i)}(v) = HASH(\{\{ l^{(i-1)}(u) \forall u \in N(v) \}\})
     $$
-3. Step 2를 K번 반복헤 $l^{(K)}(v)$를 할당합니다.
+3. Step 2를 K번 반복헤 $$l^{(K)}(v)$$를 할당합니다.
 
-이때 K는 상황에 맞게 직접 설정합니다. $l^{(K)}(v)$는 K-hop(K 거리 만큼 떨어진) 이웃 정보를 요약하게 됩니다.
+이때 K는 상황에 맞게 직접 설정합니다. $$l^{(K)}(v)$$는 K-hop(K 거리 만큼 떨어진) 이웃 정보를 요약하게 됩니다.
 최종 레이블 값의 분포나 요양 정보를 통해 Graph를 표현하는 데 사용할 수 있습니다.
 Weisfeiler-Lehman Kernel을 이용해 두개의 Graph에 대해 각각 표현하고, 표현 정보를 이용해 두 Graph의 유사도를 측정할 수 있습니다.
 
@@ -245,7 +245,7 @@ Weisfeiler-Lehman Kernel을 이용해 두개의 Graph에 대해 각각 표현하
     <figcaption>[Graph2]</figcaption>
 </figure>
 
-> 1. $l^{(0)}(A) = 3, l^{(0)}(B) = 2, l^{(0)}(C) = 3, l^{(0)}(D) = 2$
+> 1. $$l^{(0)}(A) = 3, l^{(0)}(B) = 2, l^{(0)}(C) = 3, l^{(0)}(D) = 2$$
 > 2. $$
     \begin{align}
     l^{(1)}(A) &= (l^{(0)}(B), l^{(0)}(C), l^{(0)}(D)) = (2, 3, 2) = 4 \\

@@ -21,11 +21,11 @@ Graph는 이렇게 각각의 점들의 속성보다는 **점들 사이의 관계
 
 ## Graph란?
 
-Graph Data는 Node의 집합인 $N$와 Edge의 집합인 $E$를 이용해 $G = (N, E)$로 표현합니다.
-하나의 Graph에 속한 Node의 수는 $|N|$, Edge의 수는 $|E|$로 표현합니다.
-Edge $(u, v) \in E$는 Node $u \in N$에서 Node $v \in N$로 연결됐다는 의미를 가집니다.
+Graph Data는 Node의 집합인 $$N$$와 Edge의 집합인 $$E$$를 이용해 $$G = (N, E)$$로 표현합니다.
+하나의 Graph에 속한 Node의 수는 $$|N|$$, Edge의 수는 $$|E|$$로 표현합니다.
+Edge $$(u, v) \in E$$는 Node $$u \in N$$에서 Node $$v \in N$$로 연결됐다는 의미를 가집니다.
 
-인접행렬 Adjacency Matrix $A \in R^{|V|\times|V|}$로 Graph를 표현할 수 있습니다.
+인접행렬 Adjacency Matrix $$A \in R^{|V|\times|V|}$$로 Graph를 표현할 수 있습니다.
 모든 Node를 Column과 Row에 나열시키고 연결되어 있으면 1, 연결되지 않은 경우 0으로 표현합니다.
 아래 그림처럼 오른쪽 Graph를 왼쪽 행렬과 같이 나타낼 수 있습니다.
 
@@ -59,7 +59,7 @@ G = nx.DiGraph(adjacency)
 nx.draw(G, labels=labels, node_size=500)
 ```
 
-Graph의 Edge가 Undirected인 경우 핸열 $A$는 대칭 행렬 Symmetric Matrix 입니다. 
+Graph의 Edge가 Undirected인 경우 핸열 $$A$$는 대칭 행렬 Symmetric Matrix 입니다. 
 출발 Node와 도착 Node가 구분된 Directed인 경우 대칭일 필요는 없습니다.
 Weighted Edge인 경우 행렬값은 0과 1 대신 실수값을 갖습니다. 
 두 Node의 연결 강도를 표현할 경우 사용합니다.
@@ -140,7 +140,7 @@ Relation Prediction은 누락된 Relationship 정보를 예측하는 것입니�
 ### 1.2.3 Clustering and Community Detection
 
 Clustering and Community Detection은 Subgraph Level의 Unsupervised Clustering 방법입니다.
-한 개의 입력 Graph $G = (N, E)$가 주어졌을 때, 내부에서 여러 Subgraph로 클러스터링합니다.
+한 개의 입력 Graph $$G = (N, E)$$가 주어졌을 때, 내부에서 여러 Subgraph로 클러스터링합니다.
 유전 작용 네트워크에서 기능별 모듈로 분류하거나, 금융 네트워크에서 사기 단체를 찾아내는 것을 예로 들 수 있습니다.
 
 또 다른 Subgraph Level예시로, Traffic Predition이 있습니다.
