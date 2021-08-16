@@ -38,7 +38,9 @@ $$A$$는 인접해렬을 나타냅니다.
 
 $$
 L = D - A
+$$
 
+$$
 L_{i, j} =
 \begin{cases}
 d_{v_i}, & \text{if } i = j \\
