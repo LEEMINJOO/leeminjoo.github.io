@@ -1,7 +1,7 @@
 ---
 layout: post
 toc: true
-title: "[CS224W GraphML] 5. GNN"
+title: "[CS224W GraphML] 5.1 GNN - 기초 Message Passing, Permutation Invariant"
 categories: graph-ml
 sitemap :
 changefreq : weekly
@@ -13,7 +13,7 @@ priority : 1.0
 이번 장에서는 GNN Graph Neural Networ를 이용한 복잡한 Encoder 모델을 다룹니다.
 GNN을 이용해 각 노드의 Feature 정보를 포함하면서 그래프 구조를 반영하도록 노드를 임베딩합니다.
 
-#### Peemutaion invariance and equivariance
+#### Permutaion invariance and equivariance
 그래프에 DNN Deep Neural Network를 정의할 때 그래프의 인접행렬을 입렵 데이러도 사용합니다.
 
 가장 간단한 방법으로 인접행렬을 Flatten하여 MLP의 입력 데이터로 사용하는 방법이 있습니다.
@@ -32,11 +32,17 @@ GNN을 이용해 각 노드의 Feature 정보를 포함하면서 그래프 구�
 그래프에 대한 네트워크는 *Permutaion Invariant(또는 Equivariant)* 해야합니다.
 
 *Permutaion Invariant*
+
+그래프의 노드 순서에 상관없이 결과가 동일합니다.
+
 $$
 f(PAP^T) = f(A)
 $$
 
 *Permutaion Equivariant*
+
+그래프의 노드 순러와 동일하게 결과가 변경됩니다.
+
 $$
 f(PAP^T) = Pf(A)
 $$
@@ -107,7 +113,7 @@ W와 bias는 GNN의 각 Layer마다 다른 Parameter로 사용하거나 공유�
 
 ### 5.1.4 Message Passing with Self-loops: self-loop GNN
 
-Neural Message Passiong을 좀 더 간략화가이 휘새 self-loop을 추가하고 Update 스텝을 생략할 수 있습니다.
+Neural Message Passiong을 좀 더 간략화하기 위해 self-loop을 추가하고 Update 스텝을 생략할 수 있습니다.
 Aggregation에서 이웃 노드에 self 노드를 추가합니다.
 이 방식은 $$W_{self}$$ 와 $$W_{neigh}$$ 를 동일한 파라미터로 공유하는 것으로 표현합니다.
 
